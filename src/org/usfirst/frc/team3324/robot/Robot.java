@@ -27,7 +27,7 @@ public class Robot extends TimedRobot {
 	public static final ExampleSubsystem kExampleSubsystem
 			= new ExampleSubsystem();
 	// Instantiate chassis so it can be called in the command
-	public static final Chassis kChassis = new Chassis();
+	public static Chassis kChassis = new Chassis();
 	public static OI m_oi;
 
 	Command m_autonomousCommand;
