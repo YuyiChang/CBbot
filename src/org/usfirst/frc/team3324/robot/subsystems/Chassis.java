@@ -1,8 +1,7 @@
 package org.usfirst.frc.team3324.robot.subsystems;
 
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
+import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
@@ -19,12 +18,12 @@ public class Chassis extends Subsystem {
 	private static final double DEFAULT_REV_POWER = -0.5;
 	
 	// Instantiate motors and motor groups
-	WPI_TalonSRX mLeftOne = new WPI_TalonSRX(0);
-	WPI_TalonSRX mLeftTwo = new WPI_TalonSRX(1);
+	Victor mLeftOne = new Victor(0);
+	Victor mLeftTwo = new Victor(1);
 	SpeedControllerGroup mLeft = new SpeedControllerGroup(mLeftOne, mLeftTwo);
 	
-	WPI_TalonSRX mRightOne = new WPI_TalonSRX(2);
-	WPI_TalonSRX mRightTwo = new WPI_TalonSRX(3);
+	Victor mRightOne = new Victor(2);
+	Victor mRightTwo = new Victor(3);
 	SpeedControllerGroup mRight = new SpeedControllerGroup(mRightOne, mRightTwo);
 	
 	DifferentialDrive mDrive = new DifferentialDrive(mLeft, mRight);
@@ -37,7 +36,7 @@ public class Chassis extends Subsystem {
     }
     
     // Compute composite motor power from gamepad input
-    // Using tankDrive‘s squareInit to increase sensitivity in low speed
+    // Using tankDriveï¿½s squareInit to increase sensitivity in low speed
     public void driveTank(double lGamepad, double rGamepad) {
     	double lPower = lGamepad + rGamepad;
     	double rPower = lGamepad - rGamepad;

@@ -7,7 +7,12 @@
 
 package org.usfirst.frc.team3324.robot;
 
+import org.usfirst.frc.team3324.robot.commands.MoveArmUp;
+
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -34,10 +39,17 @@ public class OI {
 	//// TRIGGERING COMMANDS WITH BUTTONS
 	// Once you have a button, it's trivial to bind it to a button in one of
 	// three ways:
+	Button buttonA = new JoystickButton(mMainJoy, 1);	
+	
+	public OI() {
+		buttonA.whenPressed(new MoveArmUp() );
+		
+	}
 
 	// Start the command when the button is pressed and let it run the command
 	// until it is finished as determined by it's isFinished method.
 	// button.whenPressed(new ExampleCommand());
+	
 
 	// Run the command while the button is being held down and interrupt it once
 	// the button is released.

@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team3324.robot.commands.ExampleCommand;
 import org.usfirst.frc.team3324.robot.subsystems.Chassis;
 import org.usfirst.frc.team3324.robot.subsystems.ExampleSubsystem;
+import org.usfirst.frc.team3324.robot.subsystems.RoboArm;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -28,6 +29,7 @@ public class Robot extends TimedRobot {
 			= new ExampleSubsystem();
 	// Instantiate chassis so it can be called in the command
 	public static Chassis kChassis = new Chassis();
+	public static RoboArm kRoboArm = new RoboArm();
 	public static OI m_oi;
 
 	Command m_autonomousCommand;
