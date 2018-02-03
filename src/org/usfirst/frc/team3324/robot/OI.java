@@ -9,7 +9,7 @@ package org.usfirst.frc.team3324.robot;
 
 import org.usfirst.frc.team3324.robot.commands.MoveArmUp;
 
-import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -29,8 +29,8 @@ public class OI {
 	// number it is.
 	// Joystick stick = new Joystick(port);
 	// Button button = new JoystickButton(stick, buttonNumber);
-	XboxController mMainJoy = new XboxController(XBOX_ONE_PORT);
-	XboxController mSecondJoy = new XboxController(XBOX_TWO_PORT);
+	static XboxController mMainJoy = new XboxController(XBOX_ONE_PORT);
+	static XboxController mSecondJoy = new XboxController(XBOX_TWO_PORT);
 
 	// There are a few additional built in buttons you can use. Additionally,
 	// by subclassing Button you can create custom triggers and bind those to
@@ -58,4 +58,11 @@ public class OI {
 	// Start the command when the button is released and let it run the command
 	// until it is finished as determined by it's isFinished method.
 	// button.whenReleased(new ExampleCommand());
+	public static double getRightX() {
+		return mMainJoy.getX(Hand.kRight);
+	}
+	
+	public static double getLeftY() {
+		return mMainJoy.getY(Hand.kLeft);
+	}
 }
