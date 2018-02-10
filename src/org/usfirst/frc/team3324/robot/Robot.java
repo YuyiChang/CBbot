@@ -7,6 +7,7 @@
 
 package org.usfirst.frc.team3324.robot;
 
+import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -14,6 +15,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team3324.robot.commands.ExampleCommand;
 import org.usfirst.frc.team3324.robot.subsystems.Chassis;
+import org.usfirst.frc.team3324.robot.subsystems.EncoderMonitor;
 import org.usfirst.frc.team3324.robot.subsystems.ExampleSubsystem;
 import org.usfirst.frc.team3324.robot.subsystems.RoboArm;
 
@@ -24,12 +26,13 @@ import org.usfirst.frc.team3324.robot.subsystems.RoboArm;
  * creating this project, you must also update the build.properties file in the
  * project.
  */
-public class Robot extends TimedRobot {
+public class Robot extends IterativeRobot {
 	public static final ExampleSubsystem kExampleSubsystem
 			= new ExampleSubsystem();
 	// Instantiate chassis so it can be called in the command
 	public static Chassis kChassis = new Chassis();
 	public static RoboArm kRoboArm = new RoboArm();
+	public static EncoderMonitor kMonitor = new EncoderMonitor();
 	public static OI m_oi;
 
 	Command m_autonomousCommand;
