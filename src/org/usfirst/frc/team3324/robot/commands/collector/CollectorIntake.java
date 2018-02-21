@@ -1,26 +1,27 @@
-package org.usfirst.frc.team3324.robot.commands;
+package org.usfirst.frc.team3324.robot.commands.collector;
+
+import org.usfirst.frc.team3324.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
-import org.usfirst.frc.team3324.robot.Robot;
 
 /**
  *
  */
-public class MoveArmUp extends Command {
-
-    public MoveArmUp() {
+public class CollectorIntake extends Command {
+    public CollectorIntake() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    		requires(Robot.kRoboArm);
+    		requires(Robot.kCollector);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    		
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    		Robot.kRoboArm.moveUp();
+    		Robot.kCollector.backward();
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -36,6 +37,5 @@ public class MoveArmUp extends Command {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	
     }
 }

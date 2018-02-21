@@ -17,6 +17,7 @@ import org.usfirst.frc.team3324.robot.commands.ExampleCommand;
 import org.usfirst.frc.team3324.robot.subsystems.Chassis;
 import org.usfirst.frc.team3324.robot.subsystems.EncoderMonitor;
 import org.usfirst.frc.team3324.robot.subsystems.ExampleSubsystem;
+import org.usfirst.frc.team3324.robot.subsystems.Collector;
 import org.usfirst.frc.team3324.robot.subsystems.RoboArm;
 
 /**
@@ -34,6 +35,7 @@ public class Robot extends IterativeRobot {
 	public static RoboArm kRoboArm = new RoboArm();
 	public static EncoderMonitor kMonitor = new EncoderMonitor();
 	public static OI m_oi;
+	public static Collector kCollector = new Collector();
 
 	Command m_autonomousCommand;
 	SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -48,6 +50,7 @@ public class Robot extends IterativeRobot {
 		m_chooser.addDefault("Default Auto", new ExampleCommand());
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", m_chooser);
+		SmartDashboard.putData(Robot.kCollector);
 	}
 
 	/**

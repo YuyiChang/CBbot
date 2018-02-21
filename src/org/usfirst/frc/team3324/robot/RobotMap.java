@@ -30,4 +30,13 @@ public class RobotMap {
 	public static final double armKi = 0;
 	public static final double armKd = 0;
 	
+	public static final int DIG_PORT_ARM_FRONT_LIMIT = 0;
+	public static final int DIG_PORT_ARM_BACK_LIMIT = 1;
+	
+	public static final int PWM_PORT_INTAKE_L = 0;
+	public static final int PWM_PORT_INTAKE_R = 1;
+	
+	public static final double SPEED_INTAKE_FORWARD = 0.7;
+	public static final double SPEED_INTAKE_BACKWARD = -0.7;
+	
 }

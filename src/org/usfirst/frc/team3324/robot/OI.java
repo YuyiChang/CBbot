@@ -8,6 +8,8 @@
 package org.usfirst.frc.team3324.robot;
 
 import org.usfirst.frc.team3324.robot.commands.MoveArmUp;
+import org.usfirst.frc.team3324.robot.commands.collector.CollectorIntake;
+import org.usfirst.frc.team3324.robot.commands.collector.CollectorOuttake;
 
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.XboxController;
@@ -39,17 +41,21 @@ public class OI {
 	//// TRIGGERING COMMANDS WITH BUTTONS
 	// Once you have a button, it's trivial to bind it to a button in one of
 	// three ways:
-	Button buttonA = new JoystickButton(mMainJoy, 1);	
+	Button buttonA = new JoystickButton(mMainJoy, 2);	
+	Button buttonB = new JoystickButton(mMainJoy, 1);
+	Button buttonX = new JoystickButton(mMainJoy, 3);
+	Button buttonY = new JoystickButton(mMainJoy, 4);
 	
 	public OI() {
-		buttonA.whenPressed(new MoveArmUp() );
-		
+//		buttonA.whenPressed(new MoveArmUp() );
+		// TODO: switch between intake and outtake
+		buttonA.toggleWhenPressed(new CollectorIntake());
+		buttonB.toggleWhenPressed(new CollectorOuttake());
 	}
 
 	// Start the command when the button is pressed and let it run the command
 	// until it is finished as determined by it's isFinished method.
 	// button.whenPressed(new ExampleCommand());
-	
 
 	// Run the command while the button is being held down and interrupt it once
 	// the button is released.
